@@ -1,0 +1,70 @@
+@use 'variable' as var;
+@use 'mixin' as mix;
+
+.wrapper {
+  width: var.$maxWidth;
+}
+
+.header {
+  width: var.$maxWidth;
+  height: var.$minHeight;
+  background-color: var.$navy;
+  padding: 20px;
+  box-sizing: border-box;
+
+    &-inner{
+    background-color: var.$white;
+    width: 160px;
+    height: 60px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+
+      &-box {
+      @include mix.box-size(40px, 40px);
+      }
+    }
+}
+
+.content {
+  display: flex;
+}
+
+.sidebar {
+  width: 150px;
+  height: var.$maxHeight;
+  background-color: var.$green;
+}
+
+.main {
+  width: var.$maxHeight;
+  height: var.$maxHeight;
+  background-color: var.$red;
+
+  &-inner {
+    padding: 40px;
+
+    &-box {
+      @include mix.box-size(140px, 40px);
+      border: 5px solid var.$white;
+      box-sizing: content-box;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.footer {
+  width: var.$maxWidth;
+  height: var.$minHeight;
+  background-color: var.$brown;
+}
+
+@each $name in var.$classNames {
+  $index: index(var.$classNames, $name);
+
+  .box-#{$name} {
+    background-color: nth(var.$buttonColor, $index);
+  }
+}
