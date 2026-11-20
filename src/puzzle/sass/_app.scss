@@ -2,12 +2,12 @@
 @use 'mixin' as mix;
 
 .wrapper {
-  width: var.$max_width;
+  width: var.$maxWidth;
 }
 
 .header {
-  width: var.$max_width;
-  height: var.$min_height;
+  width: var.$maxWidth;
+  height: var.$minHeight;
   background-color: var.$navy;
   padding: 20px;
   box-sizing: border-box;
@@ -34,13 +34,13 @@
 
 .sidebar {
   width: 150px;
-  height: var.$max_height;
+  height: var.$maxHeight;
   background-color: var.$green;
 }
 
 .main {
-  width: var.$max_height;
-  height: var.$max_height;
+  width: var.$maxHeight;
+  height: var.$maxHeight;
   background-color: var.$red;
 
   &-inner {
@@ -56,8 +56,8 @@
 }
 
 .footer {
-  width: var.$max_width;
-  height: var.$min_height;
+  width: var.$maxWidth;
+  height: var.$minHeight;
   background-color: var.$brown;
 }
 
